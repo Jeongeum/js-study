@@ -34,10 +34,12 @@ class User {
     this.age = age;
   }
 
+  // getter
   get age() {
     return this._age;
   }
 
+  //setter
   set age(value) {
     this._age = value < 0 ? 0 : value;
   }
@@ -58,6 +60,19 @@ console.log(experiment.publicField);
 console.log(experiment.privaterField);
 
 //static
+class Article {
+  static publisher = `Dream Coding`; // static 필드 정의
+
+  static printPublisher() {
+    // static 메소드 정의
+    console.log(`print: ${Article.publisher}!!`);
+  }
+}
+
+const article1 = new Article();
+console.log(article1.publisher); // > undefined
+console.log(Article.publisher); // > Dream Coding
+Article.printPublisher(); // > print: Dream Coding!!
 
 // 상속
 
@@ -82,7 +97,7 @@ class Rectangle extends Shape {}
 class Triangle extends Shape {
   draw() {
     super.draw(); // 오버라이딩 해도 부모 class 메소드 호출 가능
-    console.log(`📐`);
+    console.log(`△`);
   }
 
   // 오버라이딩(다형성)

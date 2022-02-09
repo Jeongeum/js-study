@@ -6,6 +6,7 @@ printHello();
 
 function log(message) {
   console.log(message);
+  return 0;
 }
 
 log("Hello@");
@@ -43,9 +44,9 @@ printAll("dream", "coding", "ellie"); // > dream coding ellie 순서대로 출�
 
 //Local scope
 
-let globalMessage = "global";
+let globalMessage = "global"; // global 변수
 function printMessage() {
-  let message = "hello";
+  let message = "hello"; // local 변수
   console.log(message);
   console.log(globalMessage);
   function printAnother() {
